@@ -13,9 +13,12 @@ class Toggle extends React.Component {
   // 💰 this.props.onToggle(this.state.on)
   state = { on: false };
   toggle = () => {
+    //  Must use setState function when the state update need to the current
+    // state information !!!!
     this.setState((currentState) => {
       return {on: !currentState.on}
     }, () => {
+      // This is to notify a state update to the user of this component !!!
       this.props.onToggle(this.state.on)
     },
     )
